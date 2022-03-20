@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   movesquare.c                                       :+:      :+:    :+:   */
+/*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 14:53:52 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/19 21:40:52 by sharrach         ###   ########.fr       */
+/*   Created: 2022/03/20 13:35:46 by sharrach          #+#    #+#             */
+/*   Updated: 2022/03/20 13:51:03 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-typedef struct s_program
-{
-    void    *mlx_pointer;
-    void    *window;
-}   t_program;
+typedef struct	s_vars {
+	void	*mlx;
+	void	*win;
+}				t_vars;
 
-int main(void)
+int	close(int keycode, t_vars *vars)
 {
-    t_program   win;
+	mlx_destroy_window(vars->mlx, vars->win);
+	return (0);
+}
 
-    win.mlx_pointer = mlx_init();
-    win.window = mlx_new_window(win.mlx_pointer, 1080, 720, "Salah");
-    int i = 0;
-    while (i <= 1000)
-    {
-        mlx_pixel_put(win.mlx_pointer, win.window, 15, i, 0x0000FF00);
-        i++;
-    }
-    mlx_loop(win.mlx_pointer);
+int	main(void)
+{
+	t_vars	vars;
+
+	vars.mlx = mlx_init();
+	vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+	mlx_hook(vars.win, 2, 1L<<0, close, &vars);
+	mlx_loop(vars.mlx);
 }

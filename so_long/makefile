@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 16:27:19 by sharrach          #+#    #+#              #
-#    Updated: 2022/03/15 17:05:36 by sharrach         ###   ########.fr        #
+#    Updated: 2022/03/20 13:35:59 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME =	so_long
 
 HEADER =	so_long.h
 
-SRCS =	movesquare.c
+SRCS =	so_long.c
 
 OBJS =	$(SRCS:.c=.o)
 
