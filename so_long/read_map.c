@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:02:32 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/21 23:55:35 by sharrach         ###   ########.fr       */
+/*   Created: 2022/03/21 10:57:06 by sharrach          #+#    #+#             */
+/*   Updated: 2022/03/21 23:54:00 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-#define SO_LONG_H
+#include "so_long.h"
 
-# define BUFFER_SIZE 1
-
-#include<stdio.h>
-#include<unistd.h>
-#include<stdlib.h>
-#include<string.h>
-#include <fcntl.h>
-#include <mlx.h>
-#include "libft/libft.h"
-#include "get_next_line.h"
-
-char	*get_next_line(int fd);
-char	**read_map(char *file);
-char	*ft_strdup(const char *src);
-
-#endif
+char	**read_map(char *file)
+{
+	int		fd;
+	char	*line;
+	char	*lines;
+	char	**map;
+	
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
+		exit (1);
+	lines = ft_strdup("");
+	while(1)
+	{
+		line = get_next_line(fd);
+		if (!line)
+			break;
+		lines = ft_strnljoin(lines, line, ft_strlen(line));
+		free(line);
+	}
+	close(fd);
+	map = ft_split(lines, '\n');
+	free(lines);
+	return (map);
+}

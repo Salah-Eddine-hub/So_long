@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 17:02:32 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/21 23:55:35 by sharrach         ###   ########.fr       */
+/*   Created: 2021/11/28 10:20:12 by sharrach          #+#    #+#             */
+/*   Updated: 2022/03/21 23:23:19 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-#define SO_LONG_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-# define BUFFER_SIZE 1
-
-#include<stdio.h>
-#include<unistd.h>
-#include<stdlib.h>
-#include<string.h>
-#include <fcntl.h>
-#include <mlx.h>
-#include "libft/libft.h"
-#include "get_next_line.h"
+# include<stdlib.h>
+# include<stdio.h>
+# include<unistd.h>
+# include<fcntl.h>
 
 char	*get_next_line(int fd);
-char	**read_map(char *file);
-char	*ft_strdup(const char *src);
-
+size_t	ft_strlen(const	char *str);
+void	ft_strcpy(char *dst, const char *src);
+char	*ft_strchr(const char *s, int c);
+void	ft_bzero(void *s, size_t n);
+char	*ft_strnljoin(char *s1, char *s2, size_t n);
 #endif

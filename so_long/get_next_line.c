@@ -6,11 +6,11 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 19:55:59 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/20 20:48:42 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/03/21 10:55:52 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 static int	ft_read_fd(int fd, char **next_line)
 {
