@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:35:46 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/21 23:51:26 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:41:21 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ int	main(void)
 	// 	;
 	for (int i = 0; i < 7; i++)
 	{
-		printf("%s", map[i]);
+		printf("%s\n", map[i]);
 	}
 	
+	if (!map_checker(map))
+		return (1);
 	// mlx = mlx_init();
 	// mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
 	// img.img = mlx_new_image(mlx, 1920, 1080);

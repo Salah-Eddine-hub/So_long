@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:02:32 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/21 23:55:35 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/03/22 12:50:43 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@
 #include "get_next_line.h"
 
 char	*get_next_line(int fd);
-char	**read_map(char *file);
+size_t	ft_arrlen(char **arr);
 char	*ft_strdup(const char *src);
+char	*ft_stradd(char const *s1, char const *s2);
+char	**read_map(char *file);
+int		map_checker(char **map);
+
 
 #endif

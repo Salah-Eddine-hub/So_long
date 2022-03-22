@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 10:57:06 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/22 10:32:08 by sharrach         ###   ########.fr       */
+/*   Created: 2022/03/22 12:50:03 by sharrach          #+#    #+#             */
+/*   Updated: 2022/03/22 12:50:23 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**read_map(char *file)
+size_t	ft_arrlen(char **arr)
 {
-	int		fd;
-	char	*line;
-	char	*lines;
-	char	**map;
-	
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
-		exit (1);
-	lines = ft_strdup("");
-	while(1)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			break;
-		lines = ft_stradd(lines, line);
-		free(line);
-	}
-	close(fd);
-	map = ft_split(lines, '\n');
-	free(lines);
-	return (map);
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }
