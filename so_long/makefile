@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 16:27:19 by sharrach          #+#    #+#              #
-#    Updated: 2022/03/22 12:51:24 by sharrach         ###   ########.fr        #
+#    Updated: 2022/03/23 12:06:01 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJS =	$(SRCS:.c=.o)
 
 CC =	cc
 
-CFLAGS =	-Wall -Wextra -Werror
+CFLAGS =	-Wall -Wextra -Werror -g
 
 RM =	rm -f
 

@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 10:57:06 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/22 10:32:08 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/03/23 11:51:35 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ char	**read_map(char *file)
 	char	*line;
 	char	*lines;
 	char	**map;
+	
 	
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
