@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 10:38:01 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/23 13:37:51 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/05 14:33:03 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_is_rectangular(char **map)
 	while (map[x])
 	{
 		if (len != ft_strlen(map[x]))
-			return (0);
+			return (1);
 		x ++;
 	}
-	return (1);
+	return (0);
 }
 
 int	ft_is_map_closed(char **map)
@@ -68,15 +68,9 @@ int	component_check(char **map, char c)
 
 int	map_checker(char **map)
 {
-	if (!ft_is_rectangular(map))
-		return (0);
-	if (!ft_is_map_closed(map))
-		return (0);
-	if (!component_check(map, 'P'))
-		return (0);
-	if (!component_check(map, 'E'))
-		return (0);
-	if (!component_check(map, 'C'))
-		return (0);
-	return (1);
+	if (ft_is_rectangular(map) && ft_is_map_closed(map)
+		&& component_check(map, 'P') && component_check(map, 'E')
+		&& component_check(map, 'C'))
+		return (1);
+	return (0);
 }
