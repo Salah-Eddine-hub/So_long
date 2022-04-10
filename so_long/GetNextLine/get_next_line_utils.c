@@ -6,11 +6,11 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 10:20:03 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/21 23:56:31 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/09 23:31:20 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include "../so_long.h"
 
 size_t	ft_strlen(const	char *str)
 {

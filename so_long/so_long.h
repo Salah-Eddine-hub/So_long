@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:02:32 by sharrach          #+#    #+#             */
-/*   Updated: 2022/03/22 12:50:43 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/09 23:27:29 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # define BUFFER_SIZE 1
 
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_W 13
+
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>
@@ -22,7 +27,7 @@
 #include <fcntl.h>
 #include <mlx.h>
 #include "libft/libft.h"
-#include "get_next_line.h"
+#include "GetNextLine/get_next_line.h"
 
 char	*get_next_line(int fd);
 size_t	ft_arrlen(char **arr);

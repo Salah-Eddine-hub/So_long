@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 16:27:19 by sharrach          #+#    #+#              #
-#    Updated: 2022/03/23 12:06:01 by sharrach         ###   ########.fr        #
+#    Updated: 2022/04/09 23:26:17 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME =	so_long
 
 HEADER =	so_long.h
 
-SRCS =	get_next_line.c\
-		get_next_line_utils.c\
+SRCS =	GetNextLine/get_next_line.c\
+		GetNextLine/get_next_line_utils.c\
 		ft_arrlen.c\
 		ft_strdup.c\
 		ft_stradd.c\
