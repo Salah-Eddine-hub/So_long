@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 16:27:19 by sharrach          #+#    #+#              #
-#    Updated: 2022/04/09 23:26:17 by sharrach         ###   ########.fr        #
+#    Updated: 2022/04/12 17:21:17 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRCS =	GetNextLine/get_next_line.c\
 		ft_stradd.c\
 		read_map.c\
 		check_map.c\
+		movement.c\
+		exit_program.c\
 		so_long.c
 
 OBJS =	$(SRCS:.c=.o)
@@ -36,16 +38,19 @@ RM =	rm -f
 
 $(NAME):	$(OBJS) $(HEADER)
 			make -C libft
-			$(CC) $(CFLAGS) $(OBJS) -lmlx -framework OpenGL -framework AppKit libft/libft.a -o $(NAME)
+			make -C ft_printf
+			$(CC) $(CFLAGS) $(OBJS) -lmlx -framework OpenGL -framework AppKit libft/libft.a ft_printf/libftprintf.a -o $(NAME)
 
 all : $(NAME)
 
 clean :
 		# make clean -C libft
+		# make clean -C ft_printf
 		$(RM) $(NAME)
 
 fclean :	clean
 			# make fclean -C libft
+			# make fclean -C ft_printf
 			$(RM) $(OBJS)
 
 re :	fclean all
