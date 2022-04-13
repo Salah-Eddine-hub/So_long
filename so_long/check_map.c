@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 10:38:01 by sharrach          #+#    #+#             */
-/*   Updated: 2022/04/05 14:33:03 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/12 23:37:15 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_is_rectangular(char **map)
 	while (map[x])
 	{
 		if (len != ft_strlen(map[x]))
-			return (1);
+			return (0);
 		x ++;
 	}
-	return (0);
+	return (1);
 }
 
 int	ft_is_map_closed(char **map)

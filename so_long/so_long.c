@@ -6,26 +6,27 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:35:46 by sharrach          #+#    #+#             */
-/*   Updated: 2022/04/12 21:25:43 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/13 01:03:22 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 int	main(int argc, char **argv)
 {
 	t_data	img;
+	char	*extension;
 	
 	(void)argv;
 	img.move = 0;
 	if (argc != 2)
 		return (EXIT_FAILURE);
+	extension = ft_strrchr(argv[1], '.'); 
+	if (!extension || ft_strncmp(extension, ".ber", 5) != 0)
+		return (ft_printf("Error\nInvalid map."), EXIT_FAILURE);
 	img.map = read_map(argv[1]);
-	if (map_checker(img.map))
-		return (1);
+	if (!map_checker(img.map))
+		return (ft_printf("Error\nInvalid map."), EXIT_FAILURE);
 	img.mlx = mlx_init();
 	img.mlx_win = mlx_new_window(img.mlx, 50 * ft_strlen(img.map[0]), 50 * ft_arrlen(img.map), "so_long");
 	img.wall = mlx_xpm_file_to_image(img.mlx, "img/wall.xpm", &img.img_width, &img.img_height);

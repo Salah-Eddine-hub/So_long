@@ -6,7 +6,7 @@
 #    By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/07 16:27:19 by sharrach          #+#    #+#              #
-#    Updated: 2022/04/12 17:21:17 by sharrach         ###   ########.fr        #
+#    Updated: 2022/04/12 23:18:37 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,13 +44,13 @@ $(NAME):	$(OBJS) $(HEADER)
 all : $(NAME)
 
 clean :
-		# make clean -C libft
-		# make clean -C ft_printf
+		make clean -C libft
+		make clean -C ft_printf
 		$(RM) $(NAME)
 
 fclean :	clean
-			# make fclean -C libft
-			# make fclean -C ft_printf
+			make fclean -C libft
+			make fclean -C ft_printf
 			$(RM) $(OBJS)
 
 re :	fclean all

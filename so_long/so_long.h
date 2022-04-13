@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:02:32 by sharrach          #+#    #+#             */
-/*   Updated: 2022/04/12 21:12:26 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/13 00:55:28 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,8 @@ typedef struct	s_data {
 	void	*img_exit;
 	int		x;
 	int		y;
-	int		*i;
-	int		*j;
 	void	*mlx;
-	void	*mlx_win;
+void	*mlx_win;
 	int		move;
 	
 }				t_data;
