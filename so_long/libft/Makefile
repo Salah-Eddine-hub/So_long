@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sharrach <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/13 11:34:06 by sharrach          #+#    #+#              #
-#    Updated: 2021/11/13 11:34:09 by sharrach         ###   ########.fr        #
+#    Updated: 2022/04/13 13:42:44 by sharrach         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,18 +51,6 @@ SRCS =	ft_isalpha.c\
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS = ft_lstadd_front.c\
-		ft_lstadd_back.c\
-		ft_lstclear.c\
-		ft_lstdelone.c\
-		ft_lstiter.c\
-		ft_lstlast.c\
-		ft_lstmap.c\
-		ft_lstnew.c\
-		ft_lstsize.c
-
-OBJSBONUS = $(BONUS:.c=.o)
-
 CC		=	cc
 
 CFLAGS	=	-Wall -Wextra -Werror
@@ -75,13 +63,10 @@ RM		= 	rm -f
 $(NAME):	$(OBJS) $(HEADER)
 			ar rcs $@ $^
 
-bonus:		$(OBJS) $(OBJSBONUS)
-			ar rcs $(NAME) $^
-
 all:		$(NAME)
 
 clean:
-			$(RM) $(OBJS) $(OBJSBONUS)
+			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
