@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 17:02:32 by sharrach          #+#    #+#             */
-/*   Updated: 2022/04/13 18:08:13 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/15 13:48:37 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,9 @@ typedef struct s_data {
 	int		y;
 	void	*mlx;
 	void	*mlx_win;
-	int		fd;
-	char	*line;
-	char	*lines;
 }				t_data;
 
 char	*get_next_line(int fd);
-size_t	ft_arrlen(char **arr);
-char	*ft_strdup(const char *src);
-char	*ft_stradd(char const *s1, char const *s2);
 char	**read_map(char *file);
 int		map_checker(char **map);
 int		key_hook(int keycode, t_data *img);

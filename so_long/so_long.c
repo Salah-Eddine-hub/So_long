@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 13:35:46 by sharrach          #+#    #+#             */
-/*   Updated: 2022/04/13 18:08:11 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/15 13:58:38 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ int	main(int argc, char **argv)
 	char	*extension;
 
 	if (argc != 2)
-		return (ft_printf("Error\nFew arguments"), EXIT_FAILURE);
+		return (ft_printf("Error\nInvalid arguments\nUsage: ./so_long <map>"),
+			EXIT_FAILURE);
 	extension = ft_strrchr(argv[1], '.');
 	if (!extension || ft_strncmp(extension, ".ber", 5) != 0)
 		return (ft_printf("Error\nInvalid map."), EXIT_FAILURE);

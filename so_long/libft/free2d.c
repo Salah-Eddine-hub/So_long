@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   free2d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sharrach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 10:26:50 by sharrach          #+#    #+#             */
-/*   Updated: 2021/11/02 10:26:54 by sharrach         ###   ########.fr       */
+/*   Created: 2022/04/12 22:51:48 by sharrach          #+#    #+#             */
+/*   Updated: 2022/04/15 13:53:14 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	*free2d(char **arr)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free (arr);
+	return (NULL);
 }

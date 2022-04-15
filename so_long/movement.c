@@ -6,7 +6,7 @@
 /*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/11 14:04:53 by sharrach          #+#    #+#             */
-/*   Updated: 2022/04/13 18:10:15 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/15 14:16:59 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static	void	player_position(t_data *img)
 	}
 }
 
-static	size_t	collect_count(t_data *img)
+static	size_t	collect_count(t_data *img, char c)
 {
 	size_t	count;
 
@@ -67,7 +67,7 @@ static	size_t	collect_count(t_data *img)
 		img->x = 0;
 		while (img->map[img->y][img->x])
 		{
-			if (img->map[img->y][img->x] == 'C')
+			if (img->map[img->y][img->x] == c)
 				count ++;
 			img->x ++;
 		}
@@ -80,9 +80,9 @@ static void	movemment(char *p_one, char *p_two, t_data *img)
 {
 	if (*p_two == '1')
 		return ;
-	if (*p_two == 'E' && collect_count(img) > 0)
+	if (*p_two == 'E' && collect_count(img, 'C') > 0)
 		return ;
-	if (*p_two == 'E' && collect_count(img) == 0)
+	if (*p_two == 'E' && collect_count(img, 'C') == 0)
 	{
 		ft_printf("You Won");
 		exit_program(img);
@@ -113,6 +113,9 @@ int	key_hook(int keycode, t_data *img)
 		movemment(&img->map[img->y][img->x],
 			&img->map[img->y - 1][img->x], img);
 	else if (keycode == KEY_ESC)
+	{
+		ft_printf("Game Closed");
 		exit_program (img);
+	}
 	return (0);
 }

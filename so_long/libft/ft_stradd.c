@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_stradd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sharrach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 14:59:57 by sharrach          #+#    #+#             */
-/*   Updated: 2021/11/06 15:00:00 by sharrach         ###   ########.fr       */
+/*   Updated: 2022/04/15 13:54:27 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
-
-static	char	*ft_strcpy(char *dst, const char *src)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
-}
+#include "libft.h"
 
 static	char	*ft_strcat(char *dest, const char *src)
 {
@@ -51,7 +37,20 @@ static	char	*ft_strcat(char *dest, const char *src)
 	return (dest);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+static void	ft_strcpy(char *dst, const char *src)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+}
+
+char	*ft_stradd(char const *s1, char const *s2)
 {
 	char	*s;
 
@@ -62,5 +61,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strcpy(s, (char *) s1);
 	ft_strcat(s, (char *) s2);
+	free((void *)s1);
 	return (s);
 }

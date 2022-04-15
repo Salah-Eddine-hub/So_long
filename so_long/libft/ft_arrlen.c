@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sharrach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/20 21:04:14 by sharrach          #+#    #+#             */
-/*   Updated: 2021/11/23 00:14:11 by sharrach         ###   ########.fr       */
+/*   Created: 2022/03/22 12:50:03 by sharrach          #+#    #+#             */
+/*   Updated: 2022/04/15 13:53:17 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+size_t	ft_arrlen(char **arr)
 {
-	t_list	*holder;
+	size_t	i;
 
-	if (!del || !lst)
-		return ;
-	while (*lst)
-	{
-		holder = *lst;
-		*lst = (*lst)->next;
-		ft_lstdelone(holder, del);
-	}
-	*lst = NULL;
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }

@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sharrach <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sharrach <sharrach@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/02 18:50:04 by sharrach          #+#    #+#             */
-/*   Updated: 2021/11/03 09:30:11 by sharrach         ###   ########.fr       */
+/*   Created: 2022/04/14 03:00:06 by sharrach          #+#    #+#             */
+/*   Updated: 2022/04/14 17:03:12 by sharrach         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../so_long.h"
 
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\0')
 	{
